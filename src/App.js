@@ -3,7 +3,9 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import RestaurantData from './assets/mock';
 import MainComponent from './components/MainComponent';
 import RestaurantMenuComponent from './components/RestaurantMenuComponent';
-import RestaurantSubMenu from './components/RestaurantSubMenuComponent';
+import {RestaurantSubMenu} from './components/RestaurantSubMenuComponent';
+import CheckoutComponent from './components/CheckoutComponent';
+import { selectedItemsStorage } from './components/RestaurantSubMenuComponent';
 
 
 const SubmenuComponent = ({menuIndex}) => (
@@ -31,6 +33,7 @@ function App() {
               element={<SubmenuComponent menuIndex={index} />} />
             
           ))}
+         <Route path="/checkout" element={<CheckoutComponent selectedItems={selectedItemsStorage} />} />
         </Routes>
       </BrowserRouter>
     </div>
