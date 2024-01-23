@@ -5,29 +5,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const body = {
-    backgroundColor: "#56f099", 
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: "#56f099",
+    alignContent: "center",
     width:"500px",
     borderRadius:"6%", 
     height:"100vh",
     fontWeight: "bold",
-    overflow: "auto"
+    overflow: "auto",
+    boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)"
 }
 
 
 const MainComponent = () => {
   return (
+    <div className='container' style={{width: "fit-content", overflow: "auto"}}>
     <div style={body}>
-        <div className='container' style={{marginTop: "5%"}}>
-      <button type="button" className="btn btn-outline-light border-3" style={{fontWeight: "600",color:"white",borderRadius: "50%"}}>
+      <div className='container d-flex justify-content-center p-3'>
+      <button type="button" className="btn btn-outline-light rounded-5 border-0" style={{fontWeight: "600",color:"white"}}>
       <FontAwesomeIcon icon={faUser} style={{color: "#000000",fontSize: "28px"}} />
       </button><label className='w-75 mx-3'>
       <div class="input-group input-group-sm mb-3">
       <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
-      <button type='button' className='btn btn-outline-dark border-2 rounded-3 mx-1'>
-      <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#FFFFFF", fontSize: "24px"}} />
+      <button type='button' className='btn btn-outline-light border-0 p-3 rounded-3 mx-2'>
+      <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#000000", fontSize: "24px"}} />
       </button>
      </div>
      </label>
+     </div>
       </div>
     </div>
   );
