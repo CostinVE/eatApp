@@ -16,92 +16,82 @@ const body = {
 
 let selectedItemsStorage = [];
 
-const MenuItem = ({ item, isSelected, handleCheckboxChange, counter, increaseCounter, decreaseCounter }) => {
-  return (
-    <div className="form-check my-2">
-      <input
-        style={{ display: "none" }}
-        type="checkbox"
-        id={`checkbox-${item}`}
-        className="form-check-input"
-        value={item}
-        checked={isSelected}
-        onChange={() => handleCheckboxChange(item)}
-      />
-      <label htmlFor={`checkbox-${item}`} className="form-check-label fs-4 shadow p-4 w-100 rounded-3" style={{ backgroundColor: isSelected ? '#f0d01f' : 'white' }}>
-        {item}
-      </label>
-      <div className="d-flex align-items-center">
-        <Button variant="success" className="mx-2" onClick={() => decreaseCounter(item)}>
-          <FontAwesomeIcon icon={faMinus} />
-        </Button>
-        <span>{counter}</span>
-        <Button variant="success" className="mx-2" onClick={() => increaseCounter(item)}>
-          <FontAwesomeIcon icon={faPlus} />
-        </Button>
-      </div>
-    </div>
-  );
-};
-
 const MenuComponent = ({ menu }) => {
-  const [selectedItems, setSelectedItems] = useState({});
-  const navigate = useNavigate(); // Use the useNavigate hook
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [itemCounters, setItemCounters] = useState({});
 
   const handleCheckboxChange = (item) => {
-    const updatedSelectedItems = { ...selectedItems };
+    const updatedSelectedItems = [...selectedItems];
 
     // Toggle the selection state of the item
-    if (updatedSelectedItems[item]) {
-      delete updatedSelectedItems[item];
+    if (updatedSelectedItems.includes(item)) {
+      updatedSelectedItems.splice(updatedSelectedItems.indexOf(item), 1);
     } else {
-      updatedSelectedItems[item] = 1;
+      updatedSelectedItems.push(item);
     }
 
-    selectedItemsStorage = Object.keys(updatedSelectedItems);
+    selectedItemsStorage = updatedSelectedItems;
     console.log(selectedItemsStorage);
 
     setSelectedItems(updatedSelectedItems);
-    console.log(`Selected Items: ${Object.keys(updatedSelectedItems).join(', ')}`);
+    console.log(`Selected Items: ${updatedSelectedItems.join(', ')}`);
   };
 
-  const increaseCounter = (item) => {
-    const updatedSelectedItems = { ...selectedItems };
-    updatedSelectedItems[item] = (updatedSelectedItems[item] || 0) + 1;
-
-    setSelectedItems(updatedSelectedItems);
+  const incrementCounter = (item) => {
+    // Increment the counter for the selected item
+    setItemCounters((prevCounters) => ({
+      ...prevCounters,
+      [item]: (prevCounters[item] || 0) + 1,
+    }));
+    
+    console.log(`Counter for ${item}: ${itemCounters[item] || 0}`);
   };
 
-  const decreaseCounter = (item) => {
-    const updatedSelectedItems = { ...selectedItems };
-    if (updatedSelectedItems[item] > 0) {
-      updatedSelectedItems[item] -= 1;
-    }
+  const decrementCounter = (item) => {
+    // Increment the counter for the selected item
+    setItemCounters((prevCounters) => ({
+      ...prevCounters,
+      [item]: (prevCounters[item] || 0) - 1,
+    }));
 
-    setSelectedItems(updatedSelectedItems);
+    console.log(`Counter for ${item}: ${itemCounters[item] || 0}`);
+  };
+
+  const updateLabelStyle = (item) => {
+    return {
+      backgroundColor: selectedItems.includes(item) ? '#f0d01f' : 'white',
+    };
   };
 
   return (
     <div>
       <h2 className="d-flex justify-content-evenly text-center bg-white rounded-3 p-1 my-2 w-100">
-        <FontAwesomeIcon icon={faLeftLong} /> {menu.title} <FontAwesomeIcon icon={faMagnifyingGlass} />
+        {menu.title}
       </h2>
       <div className="container d-flex flex-column my-4" style={{ marginBottom: 0 }}>
         {menu.items?.map((item, index) => (
-          <MenuItem
-            key={index}
-            item={item}
-            isSelected={selectedItems[item]}
-            handleCheckboxChange={handleCheckboxChange}
-            counter={selectedItems[item] || 0}
-            increaseCounter={increaseCounter}
-            decreaseCounter={decreaseCounter}
-          />
+          <div key={index} className="container d-flex flex-column my-2">
+            <input
+              style={{ display: "none" }}
+              type="checkbox"
+              id={`checkbox-${index}`}
+              className="form-check-input"
+              value={item}
+              checked={selectedItems.includes(item)}
+              onChange={() => handleCheckboxChange(item)}
+            />
+            <label htmlFor={`checkbox-${index}`} className="form-check-label fs-4 shadow p-4 w-100 rounded-3" style={updateLabelStyle(item)}>
+              {item}
+              
+            </label>
+            
+          </div>
         ))}
       </div>
     </div>
   );
 };
+
 
 const RestaurantSubMenu = ({ submenuIndex }) => {
   const submenu = RestaurantData[0]?.menu[submenuIndex];
@@ -125,8 +115,7 @@ const RestaurantSubMenu = ({ submenuIndex }) => {
   );
 };
 
+
+
 export { selectedItemsStorage }
 export { RestaurantSubMenu }
-
-  
-  

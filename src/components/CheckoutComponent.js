@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS 
 import { selectedItemsStorage } from './RestaurantSubMenuComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,8 +16,24 @@ const CheckoutComponent = () => {
     overflow: "auto",
     boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)"
 }
+const [itemCounters, setItemCounters] = useState({});
 
-  
+  const incrementCounter = (item) => {
+    // Increment the counter for the selected item
+    setItemCounters((prevCounters) => ({
+      ...prevCounters,
+      [item]: (prevCounters[item] || 0) + 1,
+    }));
+  };
+
+  const decrementCounter = (item) => {
+    // Decrement the counter for the selected item
+    setItemCounters((prevCounters) => ({
+      ...prevCounters,
+      [item]: (prevCounters[item] || 0) - 1,
+    }));
+  };
+
     return (
       <div className='container' style={{width: "fit-content", overflow: "auto"}}>
       <div style={body}>
@@ -35,7 +51,7 @@ const CheckoutComponent = () => {
           {selectedItemsStorage.map((item, index) => (
             <div className='container d-flex flex-column my-4 flex-wrap  'key={index}>
               {/* Render other content based on the current item */}
-              <div className='d-flex justify-content-evenly shadow rounded-3 fw-bold p-3' style={{width: "500px"}}> <button type='btn' className='btn btn-outline-danger rounded-circle border-0'><FontAwesomeIcon icon={faMinus} /></button> <p>Q</p> {item}  <p>price</p> <button type='btn' className='btn btn-outline-success rounded-circle border-0'><FontAwesomeIcon icon={faPlus} /></button> </div>
+              <div className='d-flex justify-content-evenly shadow rounded-3 fw-bold p-3' style={{width: "500px"}}> <button onClick={() => decrementCounter(item)} type='btn' className='btn btn-outline-danger rounded-circle border-0'><FontAwesomeIcon icon={faMinus} /></button> <p>{itemCounters[item] || 0}</p> {item}  <p>price</p> <button onClick={() => incrementCounter(item)} type='btn' className='btn btn-outline-success rounded-circle border-0'><FontAwesomeIcon icon={faPlus} /></button> </div>
             </div>
             
           ))}</div>
