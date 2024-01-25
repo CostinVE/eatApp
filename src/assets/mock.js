@@ -7,101 +7,94 @@ const RestaurantData = [
         id: 'menu1',
         title: 'Limited Edition',
         items: [
-          'MENU BIG ANGUS',
-          'MENU BIG McCrispy',
-          'MENU BIG BBQ',
-          'MENU ANGUS SPECIAL BEEF',
-          'MENU McCrispy and CHEDAR',
-          'MENU BBQ SPECIAL PORK',
-          'Bacon Jalapeno COINS',
+          { 
+            name: 'MENU BIG ANGUS',
+            details: {
+              price: '14.99',
+              description: 'The Menu includes an Angus sandwich, a big portion of fries and at choice a soft-drink, water...'
+            },
+          },
+          { 
+            name: 'MENU BIG McCrispy',
+            details: {
+              price: '13.49',
+              description: 'The Menu includes a McCrispy sandwich, a big portion of fries and at choice a soft-drink, water...'
+            },
+          },
+          // Other menu items...
         ],
       },
       {
         id: 'menu2',
         title: 'Menu Maxi',
         items: [
-          'Big Mac',
-          'Quarter Pounder',
-          'Double Cheeseburger',
-          'Chicken McNuggets',
-          'Filet-O-Fish',
-          'McChicken',
+          { 
+            name: 'Big Mac',
+            details: {
+              price: '10.99',
+              description: 'The classic Big Mac with two all-beef patties, special sauce, lettuce, cheese, pickles, onions on a sesame seed bun.'
+            },
+          },
+          { 
+            name: 'Quarter Pounder',
+            details: {
+              price: '9.99',
+              description: 'Quarter Pounder with cheese, a 100% beef patty seasoned with just a pinch of salt and pepper, topped with slivered onions, tangy pickles, ketchup, mustard, and cheese.'
+            },
+          },
+          // Other menu items...
         ],
-      },
-      {
-        id: 'menu3',
-        title: 'Sandwich',
-        items: [
-          'McChicken Sandwich',
-          'Grilled Chicken Sandwich',
-          'Bacon Ranch Grilled Chicken Sandwich',
-          'Double Cheeseburger',
-          'McDouble',
-          'Bacon McDouble',
-        ],
-      },
-      {
-        id: 'menu4',
-        title: 'Salads',
-        items: [
-          'Caesar Salad',
-          'Side Salad',
-          'Southwest Grilled Chicken Salad',
-          'Bacon Ranch Salad',
-          "Fruit 'N Yogurt Parfait",
-          'Apple Slices',
-        ],
-      },
-      {
-        id: 'menu5',
-        title: 'Happymeal',
-        items: [
-          'Happy Meal Cheeseburger',
-          'Happy Meal Nuggets',
-          'Happy Meal McToast',
-          'Happy Meal Hamburger',
-          'McChicken with Pickles',
-          'Apple Slices',
-        ],
-      },
-      {
-        id: 'menu6',
-        title: 'Desserts',
-        items: [
-          'McFlurry',
-          'Apple Pie',
-          'Sundae',
-          'Chocolate Shake',
-          'Hot Fudge Sundae',
-          'Soft-Serve Cone',
-        ],
-      },
-      {
-        id: 'menu7',
-        title: 'Drinks',
-        items: [
-          'Coca-Cola',
-          'Sprite',
-          'Fanta',
-          'Iced Coffee',
-          'Sweet Tea',
-          'Mocha Frappé',
-        ],
-      },
-      {
-        id: 'menu8',
-        title: 'Shakes',
-        items: [
-          'Vanilla Shake',
-          'Chocolate Shake',
-          'Strawberry Shake',
-          'Oreo McFlurry',
-          'Chocolate Chip Cookie Topped McFlurry',
-          "M&M's McFlurry",
-        ],
-      },
-    ],
+      }
+    ]
   },
+  {
+    id: 2,
+    title: 'KFC',
+    menu: [
+      {
+        id: 'menu1',
+        title: 'Menu 1',
+        items: [
+          { 
+            name: 'Original Recipe Chicken',
+            details: {
+              price: '9.99',
+              description: 'Crispy, juicy chicken seasoned with a special blend of 11 herbs and spices.'
+            },
+          },
+          { 
+            name: 'Zinger Burger',
+            details: {
+              price: '8.49',
+              description: 'A spicy, crunchy chicken fillet, topped with lettuce and mayo, served in a soft bun.'
+            },
+          },
+          // Other menu items...
+        ],
+      },
+      {
+        id: 'menu2',
+        title: 'Menu 2',
+        items: [
+          { 
+            name: 'Colonel Bucket',
+            details: {
+              price: '21.99',
+              description: 'A bucket filled with a variety of chicken pieces, perfect for sharing.'
+            },
+          },
+          { 
+            name: 'Popcorn Chicken',
+            details: {
+              price: '6.99',
+              description: 'Bite-sized chicken pieces coated in KFC\'s famous seasoning.'
+            },
+          },
+          // Other menu items...
+        ],
+      }
+    ]
+  }
 ];
 
 export default RestaurantData;

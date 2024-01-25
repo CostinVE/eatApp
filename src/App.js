@@ -3,37 +3,40 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import RestaurantData from './assets/mock';
 import MainComponent from './components/MainComponent';
 import RestaurantMenuComponent from './components/RestaurantMenuComponent';
-import {RestaurantSubMenu} from './components/RestaurantSubMenuComponent';
+import { RestaurantSubMenu } from './components/RestaurantSubMenuComponent';
 import CheckoutComponent from './components/CheckoutComponent';
 import { selectedItemsStorage } from './components/RestaurantSubMenuComponent';
 
-
-const SubmenuComponent = ({menuIndex}) => (
+const SubmenuComponent = ({ menuIndex }) => (
   <>
-     <RestaurantSubMenu submenuIndex={menuIndex} />
+    <RestaurantSubMenu submenuIndex={menuIndex} />
   </>
-)
-  
-
-
+);
 
 function App() {
-  const menuArray = RestaurantData[0]?.menu || [];
+  const primaryMenuArray = RestaurantData || [];
 
   return (
     <div className="App" style={{ justifyContent: "center" }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainComponent />} />
-          <Route path="/mcdonalds" element={<RestaurantMenuComponent />} />
-          {menuArray.map((menu, index) => (
-            <Route
-              key={menu.id}
-              path={`/menu${index + 1}`}
-              element={<SubmenuComponent menuIndex={index} />} />
-            
+          {primaryMenuArray.map((restaurant, index) => (
+            <React.Fragment key={index}>
+              <Route
+                path={`/${restaurant.title.toLowerCase()}`}
+                element={<RestaurantMenuComponent restaurant={restaurant} />}
+              />
+              {restaurant.menu.map((menu, menuIndex) => (
+                <Route
+                key={`${index}-${menuIndex}`}
+                path={`/${restaurant.title.toLowerCase()}/menu${menuIndex + 1}`}
+                element={<RestaurantSubMenu restaurantIndex={index} submenuIndex={menuIndex} />}
+              />
+              ))}
+            </React.Fragment>
           ))}
-         <Route path="/checkout" element={<CheckoutComponent selectedItems={selectedItemsStorage} />} />
+          <Route path="/checkout" element={<CheckoutComponent selectedItems={selectedItemsStorage} />} />
         </Routes>
       </BrowserRouter>
     </div>

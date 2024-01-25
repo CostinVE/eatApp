@@ -69,32 +69,32 @@ const MenuComponent = ({ menu }) => {
         {menu.title}
       </h2>
       <div className="container d-flex flex-column my-4" style={{ marginBottom: 0 }}>
-        {menu.items?.map((item, index) => (
-          <div key={index} className="container d-flex flex-column my-2">
-            <input
-              style={{ display: "none" }}
-              type="checkbox"
-              id={`checkbox-${index}`}
-              className="form-check-input"
-              value={item}
-              checked={selectedItems.includes(item)}
-              onChange={() => handleCheckboxChange(item)}
-            />
-            <label htmlFor={`checkbox-${index}`} className="form-check-label fs-4 shadow p-4 w-100 rounded-3" style={updateLabelStyle(item)}>
-              {item}
-              
-            </label>
-            
-          </div>
-        ))}
+      {menu.items?.map((item, index) => (
+  <div key={index} className="container d-flex flex-column my-2">
+    <input
+      style={{ display: "none" }}
+      type="checkbox"
+      id={`checkbox-${index}`}
+      className="form-check-input"
+      value={item}
+      checked={selectedItems.includes(item)}
+      onChange={() => handleCheckboxChange(item)}
+    />
+    <label htmlFor={`checkbox-${index}`} className="form-check-label fs-4 shadow p-4 w-100 rounded-3" style={updateLabelStyle(item)}>
+      {item.name} - ${parseInt(item.details.price)} {/* Access item.details.price */}
+    </label>
+  </div>
+))}
+
       </div>
     </div>
   );
 };
 
 
-const RestaurantSubMenu = ({ submenuIndex }) => {
-  const submenu = RestaurantData[0]?.menu[submenuIndex];
+const RestaurantSubMenu = ({ restaurantIndex, submenuIndex }) => {
+  const restaurant = RestaurantData[restaurantIndex];
+  const submenu = restaurant?.menu[submenuIndex];
   const navigate = useNavigate(); // Use the useNavigate hook
 
   const handleAddToCart = () => {
@@ -114,6 +114,7 @@ const RestaurantSubMenu = ({ submenuIndex }) => {
     </div>
   );
 };
+
 
 
 
