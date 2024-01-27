@@ -70,7 +70,7 @@ const MenuComponent = ({ menu }) => {
       </h2>
       <div className="container d-flex flex-column my-4" style={{ marginBottom: 0 }}>
       {menu.items?.map((item, index) => (
-  <div key={index} className="container d-flex flex-column my-2">
+  <div key={index} className="d-flex flex-column my-3 p-3">
     <input
       style={{ display: "none" }}
       type="checkbox"
@@ -80,8 +80,15 @@ const MenuComponent = ({ menu }) => {
       checked={selectedItems.includes(item)}
       onChange={() => handleCheckboxChange(item)}
     />
-    <label htmlFor={`checkbox-${index}`} className="form-check-label fs-4 shadow p-4 w-100 rounded-3" style={updateLabelStyle(item)}>
-      {item.name} - ${parseInt(item.details.price)} {/* Access item.details.price */}
+     
+     
+    <label htmlFor={`checkbox-${index}`} className="row row-cols-3 form-check-label shadow p-3 rounded-3" style={updateLabelStyle(item)}>
+      <div className="col-2"><img src={item.details.img} style={{width: '80px', height: '80px'}} alt={'not found'} /></div>
+      <div className="col-8"><h4 style={{marginTop: "1em", marginLeft: "1em"}} > {item.name}</h4></div>
+      <div className="col-2"><span className="m-0 p-0 fs-4 text-success">${parseInt(item.details.price)}</span></div>
+      <div className="col-2"></div>
+      <div className="col-10"><p className="text-secondary ">{item.details.description}</p></div>
+
     </label>
   </div>
 ))}
