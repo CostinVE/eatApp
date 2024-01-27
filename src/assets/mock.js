@@ -27,13 +27,44 @@ import kfcorange from './MOBORDER_TROPICANA_ORANGE_1200x800.jpg'
 import kfchotchocalate from './MOBORDER_HOT_CHOCOLATE_1200x800 (1).jpg'
 import kfcmountaindew from './mountain-dew-kfc-sweet-lightning-ft-BLOG0619-4040fd2af3b748cd982a6673ab570870.jpg'
 import kfclipton from './Drink_Lipton_Iced_Tea.png'
-
-
+import sashimiPlatterIMG from './sashimi-c123df7.jpg'
+import gyozaIMG from './Gyoza-3112-I.jpg'
+import takoyakiIMG from './takoyaki.jpg'
+import seaweedSaladIMG from './seaweed-salad-wakame2.jpg'
+import agedashiTofuIMG from './Agedashi-Tofu-8400-II.jpg'
+import misoSoupIMG from './MisoSoup_RECIPE_012023_46093 (1).png'
+import asiansoupIMG from './ramen.png'
+import grilledSalmonIMG from './Grilled-Salmon-foodiecrush.com-023.jpg'
+import porkCurryIMG from './pork curry.jpg'
+import chickenTeriyakiIMG from  './teriyaki-chicken-recipe-1.jpg'
+import beefRamenIMG from './ingredients-for-beef-ramen-easy-720x540.jpg'
+import vegStirFryIMG from './chicken-stir-fry-1.jpg'
+import shrimpPadThaiIMG from './pad-thai-1200x1483.jpg'
+import seafoodsalad from './munufood144.jpg'
+import sushi from './sushi-vs-sashimi-sushi-rolls-1613088021.jpg'
+import AllCheesePizza from './all cheese.jpg'
+import PepperoniPizza from './Pizza_Pepperoni_Clasic_Homepage-3647.jpg'
+import VegetarianPizza from './Grilled-Veggie-Pizza_EXPS_LSBZ18_48960_D01_18_6b.jpg'
+import HawaiianPizza from './hawaiian-pizza-recipe-605894-2.jpg'
+import MargheritaPizza from './Margherita-pizza-2.jpg'
+import BBQChickenPizza from './BBQ-Chicken-PizzaIMG_0027-760x1140.jpg'
+import SupremePizza from './2652401_QFSSL_SupremePizza_00072-d910a935ba7d448e8c7545a963ed7101.jpg'
+import MeatLoversPizza from './large_meat-lovers-pizza.jpeg'
+import ColaIMG from './coca-cola-15210.jpg'
+import SpriteIMG from './sprite.avif'
+import RedBullIMG from './redbull.jpg'
+import IcedTeaIMG from './NCI_iced_tea.jpg'
+import LemonadeIMG from './Lemonade-4.webp'
+import McDonaldsIMG from './McDonalds Picture.png'
+import KFCPicture from './KFC Picture.jfif'
+import sushiGarden from './sushi garden.png'
+import JerrysPizza from './JerrysPizza.png'
 
 const RestaurantData = [
   {
     id: 1,
     title: 'McDonalds',
+    img: McDonaldsIMG,
     menu: [
       {
         id: 'menu1',
@@ -355,6 +386,7 @@ const RestaurantData = [
   {
     id: 2,
     title: 'KFC',
+    img: KFCPicture,
     menu: [
       {
         id: 'menu1',
@@ -675,6 +707,603 @@ const RestaurantData = [
       
       
     ]
+  },
+  {
+    id: 3,
+    title: 'Sushi Garden',
+    img: sushiGarden,
+    menu: [
+      {
+        id: 'menu1',
+        title: 'Starters',
+        items: [
+          { 
+            name: 'Sashimi Platter',
+            details: {
+              price: '25',
+              description: 'Assorted slices of fresh raw fish served with wasabi and soy sauce',
+              img: sashimiPlatterIMG
+            },
+          },
+          { 
+            name: 'Gyoza',
+            details: {
+              price: '12',
+              description: 'Pan-fried dumplings filled with minced meat and vegetables',
+              img: gyozaIMG
+            },
+          },
+          { 
+            name: 'Miso Soup',
+            details: {
+              price: '6',
+              description: 'Traditional Japanese soup made with miso paste, tofu, and seaweed',
+              img: misoSoupIMG
+            },
+          },
+          { 
+            name: 'Takoyaki',
+            details: {
+              price: '10',
+              description: 'Octopus-filled batter balls topped with takoyaki sauce and bonito flakes',
+              img: takoyakiIMG
+            },
+          },
+          { 
+            name: 'Seaweed Salad',
+            details: {
+              price: '9',
+              description: 'Mixed seaweed with sesame seeds and a savory dressing',
+              img: seaweedSaladIMG
+            },
+          },
+          { 
+            name: 'Agedashi Tofu',
+            details: {
+              price: '11',
+              description: 'Deep-fried tofu served in a savory dashi broth with grated daikon and ginger',
+              img: agedashiTofuIMG
+            },
+          },
+        ],
+      },  {
+        id: 'menu2',
+        title: 'Soups',
+        items: [
+          { 
+            name: 'Miso Soup',
+            details: {
+              price: '8',
+              description: 'Traditional Japanese soup made with miso paste, tofu, and seaweed',
+              img: asiansoupIMG
+            },
+          },
+          { 
+            name: 'Tom Yum Soup',
+            details: {
+              price: '10',
+              description: 'Spicy and sour Thai soup flavored with lemongrass, kaffir lime leaves, and chili peppers',
+              img: asiansoupIMG
+            },
+          },
+          { 
+            name: 'Pho',
+            details: {
+              price: '12',
+              description: 'Vietnamese noodle soup with beef or chicken, flavored with spices and herbs',
+              img: asiansoupIMG
+            },
+          },
+          { 
+            name: 'Ramen',
+            details: {
+              price: '11',
+              description: 'Japanese noodle soup with broth, noodles, meat, and toppings such as sliced pork, seaweed, and green onions',
+              img: asiansoupIMG
+            },
+          },
+          { 
+            name: 'Laksa',
+            details: {
+              price: '14',
+              description: 'Spicy noodle soup with a coconut milk base, popular in Southeast Asia',
+              img: asiansoupIMG
+            },
+          },
+          { 
+            name: 'Hot and Sour Soup',
+            details: {
+              price: '9',
+              description: 'Chinese soup made with broth, tofu, eggs, and a variety of vegetables, flavored with vinegar and chili peppers',
+              img: asiansoupIMG
+            },
+          },
+          { 
+            name: 'Udon Soup',
+            details: {
+              price: '10',
+              description: 'Japanese soup with thick wheat noodles in a savory broth, served with toppings like green onions, tempura, and fish cake',
+              img: asiansoupIMG
+            },
+          },
+        ]
+      },{
+        id: 'menu3',
+        title: 'Main Courses',
+        items: [
+          { 
+            name: 'Grilled Salmon',
+            details: {
+              price: '18',
+              description: 'Grilled salmon fillet served with steamed rice and vegetables',
+              img: grilledSalmonIMG
+            },
+          },
+          { 
+            name: 'Pork Curry',
+            details: {
+              price: '16',
+              description: 'Tender pork cooked in a rich curry sauce, served with rice',
+              img: porkCurryIMG
+            },
+          },
+          { 
+            name: 'Chicken Teriyaki',
+            details: {
+              price: '15',
+              description: 'Grilled chicken glazed with teriyaki sauce, served with rice and stir-fried vegetables',
+              img: chickenTeriyakiIMG
+            },
+          },
+          { 
+            name: 'Beef Ramen',
+            details: {
+              price: '17',
+              description: 'Japanese noodle soup with beef, vegetables, and a flavorful broth',
+              img: beefRamenIMG
+            },
+          },
+          { 
+            name: 'Vegetable Stir-Fry',
+            details: {
+              price: '14',
+              description: 'Assorted vegetables stir-fried in a savory sauce, served with rice or noodles',
+              img: vegStirFryIMG
+            },
+          },
+          { 
+            name: 'Shrimp Pad Thai',
+            details: {
+              price: '19',
+              description: 'Thai stir-fried noodles with shrimp, tofu, bean sprouts, and peanuts',
+              img: shrimpPadThaiIMG
+            },
+          },
+        ],
+      } , {
+        id: 'menu4',
+        title: 'Seafood Salads',
+        items: [
+          { 
+            name: 'Shrimp Caesar Salad',
+            details: {
+              price: '14',
+              description: 'Classic Caesar salad topped with grilled shrimp and parmesan cheese',
+              img: seafoodsalad
+            },
+          },
+          { 
+            name: 'Tuna Niçoise Salad',
+            details: {
+              price: '16',
+              description: 'Traditional Niçoise salad with seared tuna, potatoes, green beans, olives, and boiled eggs',
+              img: seafoodsalad
+            },
+          },
+          { 
+            name: 'Seafood Cobb Salad',
+            details: {
+              price: '18',
+              description: 'Cobb salad topped with grilled shrimp, crab meat, avocado, bacon, eggs, and tomatoes',
+              img: seafoodsalad
+            },
+          },
+          { 
+            name: 'Grilled Salmon Salad',
+            details: {
+              price: '17',
+              description: 'Mixed greens salad with grilled salmon, cherry tomatoes, cucumbers, and balsamic vinaigrette',
+              img: seafoodsalad
+            },
+          },
+          { 
+            name: 'Asian Shrimp Salad',
+            details: {
+              price: '15',
+              description: 'Mixed greens salad with marinated shrimp, mandarin oranges, almonds, and sesame ginger dressing',
+              img: seafoodsalad
+            },
+          },
+          { 
+            name: 'Crab Louie Salad',
+            details: {
+              price: '20',
+              description: 'Classic Crab Louie salad with lump crab meat, avocado, hard-boiled eggs, and Louie dressing',
+              img: seafoodsalad
+            },
+          },
+        ],
+      } , {
+        id: 'menu5',
+        title: 'Sushi Menu',
+        items: [
+          { 
+            name: 'California Roll',
+            details: {
+              price: '8',
+              description: 'Classic California roll with crab, avocado, and cucumber',
+              img: sushi
+            },
+          },
+          { 
+            name: 'Spicy Tuna Roll',
+            details: {
+              price: '9',
+              description: 'Roll filled with spicy tuna and cucumber, topped with spicy mayo and sesame seeds',
+              img: sushi
+            },
+          },
+          { 
+            name: 'Salmon Nigiri',
+            details: {
+              price: '10',
+              description: 'Sliced raw salmon over a small bed of rice',
+              img: sushi
+            },
+          },
+          { 
+            name: 'Tuna Sashimi',
+            details: {
+              price: '12',
+              description: 'Thinly sliced raw tuna served without rice',
+              img: sushi
+            },
+          },
+          { 
+            name: 'Dragon Roll',
+            details: {
+              price: '14',
+              description: 'Inside-out roll with shrimp tempura, avocado, cucumber, topped with eel and avocado slices',
+              img: sushi
+            },
+          },
+          { 
+            name: 'Rainbow Roll',
+            details: {
+              price: '16',
+              description: 'California roll topped with various types of sashimi slices',
+              img: sushi
+            },
+          },
+          { 
+            name: 'Spider Roll',
+            details: {
+              price: '15',
+              description: 'Tempura soft-shell crab, avocado, cucumber, and spicy mayo',
+              img: sushi
+            },
+          },
+          { 
+            name: 'Caterpillar Roll',
+            details: {
+              price: '17',
+              description: 'Inside-out roll with eel and cucumber, topped with avocado slices',
+              img: sushi
+            },
+          },
+        ],
+      }
+      
+      
+    ],
+  }, {
+    id: 4,
+    title: 'Jerry Pizza',
+    img: JerrysPizza,
+    menu: [
+      {
+        id: 'menu1',
+        title: 'Pizza All Cheese',
+        items: [
+          { 
+            name: 'Pizza All Cheese 25cm',
+            details: {
+              price: '10',
+              description: 'Pizza with 4 types of cheese',
+              img: AllCheesePizza
+            },
+          },
+          { 
+            name: 'Pizza All Cheese 30cm',
+            details: {
+              price: '12',
+              description: 'Pizza with 4 types of cheese',
+              img: AllCheesePizza
+            },
+          },
+          { 
+            name: 'Pizza All Cheese 40cm',
+            details: {
+              price: '15',
+              description: 'Pizza with 4 types of cheese',
+              img: AllCheesePizza
+            },
+          },
+        ],
+      },  {
+        id: 'menu2',
+        title: 'Pepperoni Pizza',
+        items: [
+          { 
+            name: 'Pepperoni Pizza 25cm',
+            details: {
+              price: '12',
+              description: 'Classic pizza topped with spicy pepperoni slices',
+              img: PepperoniPizza
+            },
+          },
+          { 
+            name: 'Pepperoni Pizza 30cm',
+            details: {
+              price: '15',
+              description: 'Classic pizza topped with spicy pepperoni slices',
+              img: PepperoniPizza
+            },
+          },
+          { 
+            name: 'Pepperoni Pizza 40cm',
+            details: {
+              price: '18',
+              description: 'Classic pizza topped with spicy pepperoni slices',
+              img: PepperoniPizza
+            },
+          },
+        ],
+      },
+      // Menu 3: Vegetarian Pizza
+      {
+        id: 'menu3',
+        title: 'Vegetarian Pizza',
+        items: [
+          { 
+            name: 'Vegetarian Pizza 25cm',
+            details: {
+              price: '11',
+              description: 'Delicious pizza loaded with fresh vegetables',
+              img: VegetarianPizza
+            },
+          },
+          { 
+            name: 'Vegetarian Pizza 30cm',
+            details: {
+              price: '14',
+              description: 'Delicious pizza loaded with fresh vegetables',
+              img: VegetarianPizza
+            },
+          },
+          { 
+            name: 'Vegetarian Pizza 40cm',
+            details: {
+              price: '17',
+              description: 'Delicious pizza loaded with fresh vegetables',
+              img: VegetarianPizza
+            },
+          },
+        ],
+      },
+      // Menu 4: Hawaiian Pizza
+      {
+        id: 'menu4',
+        title: 'Hawaiian Pizza',
+        items: [
+          { 
+            name: 'Hawaiian Pizza 25cm',
+            details: {
+              price: '13',
+              description: 'Pizza topped with ham, pineapple, and cheese',
+              img: HawaiianPizza
+            },
+          },
+          { 
+            name: 'Hawaiian Pizza 30cm',
+            details: {
+              price: '16',
+              description: 'Pizza topped with ham, pineapple, and cheese',
+              img: HawaiianPizza
+            },
+          },
+          { 
+            name: 'Hawaiian Pizza 40cm',
+            details: {
+              price: '19',
+              description: 'Pizza topped with ham, pineapple, and cheese',
+              img: HawaiianPizza
+            },
+          },
+        ],
+      },
+      // Menu 5: Margherita Pizza
+      {
+        id: 'menu5',
+        title: 'Margherita Pizza',
+        items: [
+          { 
+            name: 'Margherita Pizza 25cm',
+            details: {
+              price: '10',
+              description: 'Classic pizza with tomato, mozzarella, and basil',
+              img: MargheritaPizza
+            },
+          },
+          { 
+            name: 'Margherita Pizza 30cm',
+            details: {
+              price: '13',
+              description: 'Classic pizza with tomato, mozzarella, and basil',
+              img: MargheritaPizza
+            },
+          },
+          { 
+            name: 'Margherita Pizza 40cm',
+            details: {
+              price: '16',
+              description: 'Classic pizza with tomato, mozzarella, and basil',
+              img: MargheritaPizza
+            },
+          },
+        ],
+      },
+      // Menu 6: BBQ Chicken Pizza
+      {
+        id: 'menu6',
+        title: 'BBQ Chicken Pizza',
+        items: [
+          { 
+            name: 'BBQ Chicken Pizza 25cm',
+            details: {
+              price: '14',
+              description: 'Pizza topped with BBQ chicken, onions, and BBQ sauce',
+              img: BBQChickenPizza
+            },
+          },
+          { 
+            name: 'BBQ Chicken Pizza 30cm',
+            details: {
+              price: '17',
+              description: 'Pizza topped with BBQ chicken, onions, and BBQ sauce',
+              img: BBQChickenPizza
+            },
+          },
+          { 
+            name: 'BBQ Chicken Pizza 40cm',
+            details: {
+              price: '20',
+              description: 'Pizza topped with BBQ chicken, onions, and BBQ sauce',
+              img: BBQChickenPizza
+            },
+          },
+        ],
+      },
+      // Menu 7: Supreme Pizza
+      {
+        id: 'menu7',
+        title: 'Supreme Pizza',
+        items: [
+          { 
+            name: 'Supreme Pizza 25cm',
+            details: {
+              price: '15',
+              description: 'Loaded pizza with pepperoni, sausage, peppers, onions, and mushrooms',
+              img: SupremePizza
+            },
+          },
+          { 
+            name: 'Supreme Pizza 30cm',
+            details: {
+              price: '18',
+              description: 'Loaded pizza with pepperoni, sausage, peppers, onions, and mushrooms',
+              img: SupremePizza
+            },
+          },
+          { 
+            name: 'Supreme Pizza 40cm',
+            details: {
+              price: '21',
+              description: 'Loaded pizza with pepperoni, sausage, peppers, onions, and mushrooms',
+              img: SupremePizza
+            },
+          },
+        ],
+      },
+      // Menu 8: Meat Lovers Pizza
+      {
+        id: 'menu8',
+        title: 'Meat Lovers Pizza',
+        items: [
+          { 
+            name: 'Meat Lovers Pizza 25cm',
+            details: {
+              price: '16',
+              description: 'Pizza loaded with pepperoni, sausage, bacon, and ham',
+              img: MeatLoversPizza
+            },
+          },
+          { 
+            name: 'Meat Lovers Pizza 30cm',
+            details: {
+              price: '19',
+              description: 'Pizza loaded with pepperoni, sausage, bacon, and ham',
+              img: MeatLoversPizza
+            },
+          },
+          { 
+            name: 'Meat Lovers Pizza 40cm',
+            details: {
+              price: '22',
+              description: 'Pizza loaded with pepperoni, sausage, bacon, and ham',
+              img: MeatLoversPizza
+            },
+          },
+        ],
+      } , // Menu 9: Drinks
+      {
+        id: 'menu9',
+        title: 'Drinks',
+        items: [
+          { 
+            name: 'Cola',
+            details: {
+              price: '2',
+              description: 'Refreshing cola drink',
+              img: ColaIMG
+            },
+          },
+          { 
+            name: 'Sprite',
+            details: {
+              price: '2',
+              description: 'Lemon-lime flavored soda',
+              img: SpriteIMG
+            },
+          },
+          { 
+            name: 'Red Bull',
+            details: {
+              price: '3',
+              description: 'Energy drink',
+              img: RedBullIMG
+            },
+          },
+          { 
+            name: 'Iced Tea',
+            details: {
+              price: '2',
+              description: 'Refreshing iced tea',
+              img: IcedTeaIMG
+            },
+          },
+          { 
+            name: 'Lemonade',
+            details: {
+              price: '2',
+              description: 'Classic lemonade',
+              img: LemonadeIMG
+            },
+          },
+        ],
+      },
+      
+    ],
   },
 ];
 

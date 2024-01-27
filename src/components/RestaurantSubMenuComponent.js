@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RestaurantData from "../assets/mock";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeftLong, faMagnifyingGlass, faCartShopping, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const body = {
   width: "500px",
@@ -19,6 +19,19 @@ let selectedItemsStorage = [];
 const MenuComponent = ({ menu }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [itemCounters, setItemCounters] = useState({});
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [previousRoute, setPreviousRoute] = useState(null);
+
+  useEffect(() => {
+    // Update previous route when location changes
+    setPreviousRoute(location.pathname);
+  }, [location.pathname]);
+
+  const handleGoBack = () => {
+    // Navigate to the previous route
+    navigate(-1);
+  };
 
   const handleCheckboxChange = (item) => {
     const updatedSelectedItems = [...selectedItems];
@@ -65,9 +78,9 @@ const MenuComponent = ({ menu }) => {
 
   return (
     <div>
-      <h2 className="d-flex justify-content-evenly text-center bg-white rounded-3 p-1 my-2 w-100">
-        {menu.title}
-      </h2>
+      <h2 className="d-flex text-center bg-white rounded-3 p-1 my-2 w-100">
+            <FontAwesomeIcon icon={faLeftLong}  style={{marginRight: "2em"}} onClick={handleGoBack}/> &nbsp;&nbsp;&nbsp; {menu.title}
+          </h2>
       <div className="container d-flex flex-column my-4" style={{ marginBottom: 0 }}>
       {menu.items?.map((item, index) => (
   <div key={index} className="d-flex flex-column my-3 p-3">
@@ -83,7 +96,7 @@ const MenuComponent = ({ menu }) => {
      
      
     <label htmlFor={`checkbox-${index}`} className="row row-cols-3 form-check-label shadow p-3 rounded-3" style={updateLabelStyle(item)}>
-      <div className="col-2"><img src={item.details.img} style={{width: '80px', height: '80px'}} alt={'not found'} /></div>
+      <div className="col-2"><img src={item.details.img} style={{width: '80px', height: '80px', borderRadius: "20%"}} alt={'not found'} /></div>
       <div className="col-8"><h4 style={{marginTop: "1em", marginLeft: "1em"}} > {item.name}</h4></div>
       <div className="col-2"><span className="m-0 p-0 fs-4 text-success">${parseInt(item.details.price)}</span></div>
       <div className="col-2"></div>
@@ -103,6 +116,7 @@ const RestaurantSubMenu = ({ restaurantIndex, submenuIndex }) => {
   const restaurant = RestaurantData[restaurantIndex];
   const submenu = restaurant?.menu[submenuIndex];
   const navigate = useNavigate(); // Use the useNavigate hook
+
 
   const handleAddToCart = () => {
     // Do any necessary processing with selectedItemsStorage
