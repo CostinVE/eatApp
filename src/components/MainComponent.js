@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import RestaurantMenu from './RestaurantMenuComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import AnimatedMenu from './AnimatedMenu';
+
 
 const body = {
     display: "flex",
@@ -17,12 +19,11 @@ const body = {
     boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)"
 }
 
-
 const MainComponent = () => {
   return (
     <div className='container' style={{width: "fit-content", overflow: "auto"}}>
     <div style={body}>
-      <div className='container d-flex justify-content-center p-3'>
+      <div className='container d-flex justify-content-center p-3' style={{marginBottom: "8em"}}>
       <button type="button" className="btn btn-outline-light rounded-5 border-0" style={{fontWeight: "600",color:"white"}}>
       <FontAwesomeIcon icon={faUser} style={{color: "#000000",fontSize: "28px"}} />
       </button><label className='w-75 mx-3'>
@@ -34,6 +35,11 @@ const MainComponent = () => {
      </div>
      </label>
      </div>
+     <div className='container d-flex w-50 ' style={{marginRight:"160px"}}>
+      <div className='rotateIn'>
+        <AnimatedMenu/>
+      </div>
+    </div>
       </div>
     </div>
   );

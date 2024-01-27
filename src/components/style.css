@@ -1,3 +1,97 @@
 .hover-effect:hover {
     background-color: yellow;
   }
+  .clock {
+    width: 260px;
+    height: 280px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.position {
+  position: absolute;
+  width: 80px; /* Increased size */
+  height: 80px; /* Increased size */
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%; /* Rectangular shape */
+  -webkit-box-shadow: 3px 6px 8px -3px rgba(66, 68, 90, 1);
+-moz-box-shadow: 3px 6px 8px -3px rgba(66, 68, 90, 1);
+box-shadow: 3px 6px 8px -3px rgba(66, 68, 90, 1);
+
+}
+
+.position--11 {
+  top: 10px;
+  left: calc(25% - 15px); /* Adjusted position for 11 o'clock */
+}
+
+.position--1 {
+  top: 10px;
+  left: calc(70% - 15px); /* Adjusted position for 1 o'clock */
+}
+
+.position--3 {
+  top: calc(50% - 20px);
+  right: calc(-40px);
+}
+
+.position--7 {
+  bottom: -20px;
+  left: calc(25% - 15px); /* Adjusted position for 7 o'clock */
+}
+
+.position--5 {
+  bottom: -20px;
+  left: calc(70% - 15px); /* Adjusted position for 5 o'clock */
+}
+
+.position--9 {
+  top: calc(50% - 15px);
+  left: 0;
+}
+
+.position--middle {
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+}
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes rotateIn {
+  0% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotate3d(0, 0, 1, -200deg);
+  transform: rotate3d(0, 0, 1, -200deg);
+  opacity: 0;
+  }
+  100% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+  }
+  }
+  @keyframes rotateIn {
+  0% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotate3d(0, 0, 1, -200deg);
+  transform: rotate3d(0, 0, 1, -200deg);
+  opacity: 0;
+  }
+  100% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1;
+  }
+}
