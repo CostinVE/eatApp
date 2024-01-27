@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeftLong, faMagnifyingGlass, faRightLong } from "@fortawesome/free-solid-svg-icons";
+import './style.css'
 
 
 
@@ -13,25 +14,28 @@ const body = {
   fontWeight: "bold",
   overflow: "auto",
 }
+const hoverEffectClass = "hover-effect";
 
 function RestaurantMenuComponent({ restaurant }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [previousRoute, setPreviousRoute] = useState(null);
 
-  useEffect(() => {
-    // Update previous route when location changes
-    setPreviousRoute(location.pathname);
-  }, [location.pathname]);
+  
+
+  const handleMenuItemClick = (menu) => {
+    // Construct the submenu route based on the menu ID
+    const submenuRoute = `/${restaurant.id}/${menu.id}`;
+    navigate(submenuRoute);
+  };
+
 
   const handleGoBack = () => {
     // Navigate to the previous route
     navigate(-1);
-
-    const hoverEffect = {
-      backgroundColor: "yellow",
-      transition: "background-color 0.3s",
-    };
+  
+  
+  
     
   };
   return (
@@ -45,17 +49,15 @@ function RestaurantMenuComponent({ restaurant }) {
         </div>
         {restaurant.menu.map((menu, index) => (
           <div className="container my-3" key={index}>
-            <div 
-               className="d-flex justify-content-between rounded-3 shadow my-2 px-2 py-3 w-100"
-               style={{ transition: "background-color 0.3s" }} // Add transition for smoother effect
-              onMouseEnter={(e) => { e.target.style.backgroundColor = "yellow"; }}
-              onMouseLeave={(e) => { e.target.style.backgroundColor = "white"; }}>
-
-           <h3>{menu.title}</h3>
-        <FontAwesomeIcon icon={faRightLong} style={{ fontSize: "28px", marginRight: "1em" }}/>
+          <label className={`rounded-3 shadow my-2 px-2 py-3 w-100 ${hoverEffectClass}`} onClick={handleMenuItemClick}>
+            <div
+              className="d-flex justify-content-between" // Apply hover effect class conditionally
+            >
+              <h3>{menu.title}</h3>
+              <FontAwesomeIcon icon={faRightLong} style={{ fontSize: "28px", marginRight: "1em" }}/>
+            </div>
+          </label>
         </div>
-
-          </div>
         ))}
       </div>
     </div>
