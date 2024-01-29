@@ -25,7 +25,7 @@ function RestaurantMenuComponent({ restaurant }) {
 
   const handleMenuItemClick = (menu) => {
     // Construct the submenu route based on the menu ID
-    const submenuRoute = `/${restaurant.id}/${menu.id}`;
+    const submenuRoute = `/${restaurant.title}/${menu.id}`;
     navigate(submenuRoute);
   };
 
@@ -49,7 +49,10 @@ function RestaurantMenuComponent({ restaurant }) {
         </div>
         {restaurant.menu.map((menu, index) => (
           <div className="container my-3" key={index}>
-          <label className={`rounded-3 shadow my-2 px-2 py-3 w-100 ${hoverEffectClass}`} onClick={handleMenuItemClick}>
+          <label
+  className={`rounded-3 shadow my-2 px-2 py-3 w-100 ${hoverEffectClass}`}
+  onClick={() => handleMenuItemClick(menu)}
+>
             <div
               className="d-flex justify-content-between" // Apply hover effect class conditionally
             >
