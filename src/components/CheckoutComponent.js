@@ -33,6 +33,11 @@ const CheckoutComponent = () => {
     navigate(-1);
   };
 
+  const handleConfirmOrder = () => {
+    // Navigate to the delivery route
+    navigate('/delivery');
+  };
+
   const updateTotalItemCount = (newCount, index) => {
     setCountStates(prevStates => {
       const newStates = [...prevStates];
@@ -100,7 +105,7 @@ const CheckoutComponent = () => {
           <button
             type='btn'
             className='btn btn-success fw-semibold shadow-lg rounded-5 w-75 p-2 align-self-center sticky-bottom'
-          style={{marginTop: "30%"}}>
+          style={{marginTop: "30%"}} onClick={handleConfirmOrder}>
             Confirm Order
           </button>
         </section>

@@ -79,7 +79,7 @@ const MenuComponent = ({ menu }) => {
   return (
     <div>
       <h2 className="d-flex text-center bg-white rounded-3 p-1 my-2 w-100">
-            <FontAwesomeIcon icon={faLeftLong}  style={{marginRight: "2em"}} onClick={handleGoBack}/> &nbsp;&nbsp;&nbsp; {menu.title}
+            <FontAwesomeIcon icon={faLeftLong}  style={{marginRight: "2em",cursor:"pointer"}} onClick={handleGoBack}/> &nbsp;&nbsp;&nbsp; {menu.title}
           </h2>
       <div className="container d-flex flex-column my-4" style={{ marginBottom: 0 }}>
       {menu.items?.map((item, index) => (

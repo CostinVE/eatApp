@@ -42,7 +42,7 @@ function RestaurantMenuComponent({ restaurant }) {
     <div className="container shadow-lg" style={{ width: "fit-content", overflow: "auto" }}>
       <div style={body}>
         <h2 className="d-flex text-center bg-white rounded-3 p-1 my-2 w-100">
-        <FontAwesomeIcon icon={faLeftLong}  style={{marginRight: "2em"}} onClick={handleGoBack}/> &nbsp;&nbsp;&nbsp; {restaurant.title}
+        <FontAwesomeIcon icon={faLeftLong}  style={{marginRight: "2em", cursor:"pointer"}} onClick={handleGoBack}/> &nbsp;&nbsp;&nbsp; {restaurant.title}
         </h2>
         <div className="border-bottom border-success border-3 mb-2 p-4">
         <img src={restaurant.img} className="rounded-5" style={{width: "450px", height:"250px"}}></img>

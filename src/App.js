@@ -6,6 +6,7 @@ import RestaurantMenuComponent from './components/RestaurantMenuComponent';
 import { RestaurantSubMenu } from './components/RestaurantSubMenuComponent';
 import CheckoutComponent from './components/CheckoutComponent';
 import { selectedItemsStorage } from './components/RestaurantSubMenuComponent';
+import { OrderPlacedComponent } from './components/OrderPlacedComponent';
 
 const SubmenuComponent = ({ menuIndex }) => (
   <>
@@ -37,6 +38,7 @@ function App() {
             </React.Fragment>
           ))}
           <Route path="/checkout" element={<CheckoutComponent selectedItems={selectedItemsStorage} />} />
+          <Route path="/delivery" element={<OrderPlacedComponent />} />
         </Routes>
       </BrowserRouter>
     </div>

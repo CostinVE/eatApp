@@ -4,6 +4,8 @@ import RestaurantMenu from './RestaurantMenuComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import AnimatedMenu from './AnimatedMenu';
+import CarouselComponent from './CarouselComponent';
+
 
 
 const body = {
@@ -13,17 +15,18 @@ const body = {
     alignContent: "center",
     width:"500px",
     borderRadius:"6%", 
+    overflow: "auto",
     height:"100vh",
     fontWeight: "bold",
-    overflow: "auto",
     boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)"
 }
 
+
 const MainComponent = () => {
   return (
-    <div className='container' style={{width: "fit-content", overflow: "auto"}}>
+    <div className='container' style={{width: "fit-content",}}>
     <div style={body}>
-      <div className='container d-flex justify-content-center p-3' style={{marginBottom: "8em"}}>
+      <div className='container d-flex mx-3 justify-content-center p-3' style={{marginBottom: "8em" ,marginTop:"5%"}}>
       <button type="button" className="btn btn-outline-light rounded-5 border-0" style={{fontWeight: "600",color:"white"}}>
       <FontAwesomeIcon icon={faUser} style={{color: "#000000",fontSize: "28px"}} />
       </button><label className='w-75 mx-3'>
@@ -35,11 +38,18 @@ const MainComponent = () => {
      </div>
      </label>
      </div>
-     <div className='container d-flex w-50 ' style={{marginRight:"160px"}}>
-      <div className='rotateIn'>
+     <section className='container d-flex justify-content-center' style={{marginBottom:"auto"}}>
+      <div className='rotateInDownLeft'>
         <AnimatedMenu/>
       </div>
-    </div>
+    </section>
+    <section className='container-fluid d-flex flex-column bg-dark'style={{ borderTopLeftRadius: '35%', borderTopRightRadius: '65%', overflow:"auto" }}>
+      <div className='d-flex flex-column my-5'>
+        <p className='roboto-italic text-secondary m-0'>Sponsored</p>
+        <h4 className='roboto-bold text-white fw-medium my-1'> Featured Stores </h4>
+        <CarouselComponent />
+        </div>
+    </section>
       </div>
     </div>
   );
