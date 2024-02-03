@@ -48,6 +48,7 @@ function RestaurantMenuComponent({ restaurant }) {
         <img src={restaurant.img} className="rounded-5" style={{width: "450px", height:"250px"}}></img>
         </div>
         {restaurant.menu.map((menu, index) => (
+          // this works because restaurantData is imported in App.js
           <div className="container my-3" key={index}>
           <label
   className={`rounded-3 shadow my-2 px-2 py-3 w-100 ${hoverEffectClass}`}

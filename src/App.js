@@ -8,6 +8,7 @@ import CheckoutComponent from './components/CheckoutComponent';
 import { selectedItemsStorage } from './components/RestaurantSubMenuComponent';
 import { OrderPlacedComponent } from './components/OrderPlacedComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchPage from './components/SearchPage';
 
 
 const SubmenuComponent = ({ menuIndex }) => (
@@ -41,6 +42,7 @@ function App() {
           ))}
           <Route path="/checkout" element={<CheckoutComponent selectedItems={selectedItemsStorage} />} />
           <Route path="/delivery" element={<OrderPlacedComponent />} />
+          <Route path="/searchPage" element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
     </div>

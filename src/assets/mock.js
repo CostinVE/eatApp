@@ -63,7 +63,7 @@ import JerrysPizza from './JerrysPizza.png'
 const RestaurantData = [
   {
     id: 1,
-    title: 'McDonalds',
+    title: "McDonald's",
     img: McDonaldsIMG,
     menu: [
       {
