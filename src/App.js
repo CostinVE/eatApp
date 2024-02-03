@@ -7,6 +7,8 @@ import { RestaurantSubMenu } from './components/RestaurantSubMenuComponent';
 import CheckoutComponent from './components/CheckoutComponent';
 import { selectedItemsStorage } from './components/RestaurantSubMenuComponent';
 import { OrderPlacedComponent } from './components/OrderPlacedComponent';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const SubmenuComponent = ({ menuIndex }) => (
   <>

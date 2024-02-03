@@ -42,7 +42,7 @@ export const OrderPlacedComponent = () => {
         <FontAwesomeIcon className='hover-effect-white' icon={faLeftLong}  style={{fontSize:"48px", padding:"6%", borderRadius: "12%"}} onClick={handleGoBack}/>
         </h2>
     <h2 style={{fontWeight:"bold"}}>Your order is on it's way</h2>
-    <img className='bounce' src={require('./fast-delivery.png')} style={{width: "300px"}} alt="Delivery Icon"  />
+    <img className='bounce' src={require('./images/fast-delivery.png')} style={{width: "300px"}} alt="Delivery Icon"  />
     <div className='container-fluid d-flex text-center p-5 bg-dark'style={{ borderTopLeftRadius: '25%', borderTopRightRadius: '25%' }}>
         <h3 className='text-white roboto-regular'> &nbsp;&nbsp; Estimated arrival in 45 min</h3>
     </div>
