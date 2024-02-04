@@ -15,7 +15,7 @@ const body = {
     width: "500px",
     borderRadius: "6%",
     overflow: "auto",
-    height: "100vh",
+    height: "125vh",
     fontWeight: "bold",
     boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)"
 }
